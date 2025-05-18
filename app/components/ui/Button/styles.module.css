@@ -1,0 +1,175 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  outline: none;
+}
+
+/* Variants */
+.primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(205, 163, 73, 0.1);
+}
+
+.tertiary {
+  background: transparent;
+  color: var(--fg);
+}
+
+.tertiary:hover:not(:disabled) {
+  color: var(--accent);
+}
+
+/* Cart button variant */
+.cart {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.cart:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: 0 0 12px rgba(252, 217, 168, 0.5);
+  transform: scale(1.02);
+}
+
+.cart:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Learn more button variant */
+.learn {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-weight: 600;
+}
+
+.learn:hover:not(:disabled) {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(252, 217, 168, 0.3);
+  transform: scale(1.02);
+}
+
+.learn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.md {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.lg {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* CTA size - for prominent buttons */
+.cta {
+  padding: 14px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  min-width: 180px;
+}
+
+/* Icon Button */
+.iconButton {
+  padding: 8px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.iconButton.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.iconButton.md {
+  width: 40px;
+  height: 40px;
+}
+
+.iconButton.lg {
+  width: 48px;
+  height: 48px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* States */
+.loading {
+  cursor: wait;
+}
+
+.loading .content {
+  visibility: hidden;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Icons */
+.leftIcon,
+.rightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 

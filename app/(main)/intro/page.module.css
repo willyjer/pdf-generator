@@ -1,0 +1,101 @@
+/* app/intro/page.module.css */
+
+.intro {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--space-md) var(--space-md) 0 var(--space-md);
+  background: var(--gradient-space);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: clamp(320px, 60vw, 640px);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-lg);
+  text-align: center;
+  background: linear-gradient(to bottom right, #1e1b2f, #15121f);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 
+    0 0 40px rgba(245, 205, 255, 0.1),
+    0 0 12px rgba(255, 190, 140, 0.1),
+    0 0 2px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.2s var(--ease-fast);
+  backdrop-filter: blur(8px);
+  animation: float 6s ease-in-out infinite;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.content::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(255, 225, 200, 0.06), transparent 70%);
+  filter: blur(2px);
+}
+
+.content:hover, .content:focus-within {
+  box-shadow: 0 4px 48px 0 #CDA34955, 0 0 40px 0 rgba(205,163,73,0.15);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Title for section 1 */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  color: var(--fg);
+  margin-bottom: var(--space-md);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer styles moved to IntroFooter/styles.module.css */
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  width: 100%;
+  max-width: 580px; /* or match your content/card width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button row styles for IntroHero moved to IntroHero/styles.module.css */
+
+/* LearnList component styles moved to LearnList/styles.module.css */
